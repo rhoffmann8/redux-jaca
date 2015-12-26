@@ -17,7 +17,7 @@ node chatServer.js
 ```
 
 Example WebSocket chat server host/port are set in settings.js. Default is localhost:8081.
-Connect to http://localhost:3000 to view chat client. Add <DevTools/> under <App/> in src/index.js to view Redux Devtools panel.
+Connect to http://localhost:3000 to view chat client. Add `<DevTools/>` under `<App/>` in src/index.js to view Redux Devtools panel.
 
 ### Todo
 * Refactor ChatSettings as "smart" container
