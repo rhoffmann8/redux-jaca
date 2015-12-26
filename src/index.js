@@ -30,7 +30,7 @@ const store = finalCreateStore(reducers);
 
 ReactDOM.render(
   <Provider store={store}>
-    <div>
+    <div style={{height: '100%'}}>
       <App io={io} />
       <DevTools/>
     </div>

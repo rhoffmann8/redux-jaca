@@ -27,6 +27,11 @@ input {
   outline: none;
 }
 
+#root,
+.app {
+  height: 100%;
+}
+
 .app {
   padding-left: 150px;
   font-size: $theme-default-font-size;
@@ -229,7 +234,7 @@ input {
 }
 
 .my-modal-inner {
-  padding: 10;
+  padding: 10px;
 }
 
 .settings-field {
