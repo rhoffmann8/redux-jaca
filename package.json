@@ -1,0 +1,58 @@
+{
+  "name": "redux-jaca",
+  "version": "1.0.0",
+  "description": "Just Another Chat App, written with React and Redux",
+  "scripts": {
+    "start": "node server.js",
+    "lint": "eslint src",
+    "build": "webpack --module 'js=react!babel' --module 'jsx=react!babel' --module 'css=style!css!sass' --outfile dist/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rhoffmann8/redux-jaca.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "redux",
+    "webpack",
+    "chat",
+    "socketio"
+  ],
+  "author": "Rob Hoffmann <rhoffmann8@gmail.com> (http://github.com/rhoffmann8)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gaearon/react-hot-boilerplate/issues"
+  },
+  "homepage": "https://github.com/gaearon/react-hot-boilerplate",
+  "devDependencies": {
+    "babel-core": "^6.0.20",
+    "babel-eslint": "^4.1.3",
+    "babel-loader": "^6.0.1",
+    "babel-preset-es2015": "^6.0.15",
+    "babel-preset-react": "^6.0.15",
+    "babel-preset-stage-0": "^6.0.15",
+    "eslint-plugin-react": "^3.6.2",
+    "node-static": "^0.7.7",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  },
+  "dependencies": {
+    "css-loader": "^0.23.0",
+    "node-sass": "^3.4.2",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-modal": "^0.6.1",
+    "react-redux": "^4.0.2",
+    "redux": "^3.0.5",
+    "redux-devtools": "^3.0.0",
+    "redux-devtools-dock-monitor": "^1.0.1",
+    "redux-devtools-log-monitor": "^1.0.1",
+    "redux-thunk": "^1.0.2",
+    "sass-loader": "^3.1.2",
+    "socket.io": "^1.3.7",
+    "socket.io-client": "^1.3.7",
+    "style-loader": "^0.13.0"
+  }
+}
