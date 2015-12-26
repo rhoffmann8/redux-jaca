@@ -1,7 +1,7 @@
 jaca
 =====================
 
-Just Another Chat App, built using React/Redux and Dan Abramov's wonderful [react-hot-boilerplate](ttps://github.com/gaearon/react-hot-boilerplate) starter template. Communicates with a very basic Socket.IO server (chatServer.js) included in the project.
+Just Another Chat App, built using React/Redux and Dan Abramov's wonderful [react-hot-boilerplate](https://github.com/gaearon/react-hot-boilerplate) starter template. Communicates with a very basic Socket.IO server (chatServer.js) included in the project.
 
 ### Usage
 
