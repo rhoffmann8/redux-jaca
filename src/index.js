@@ -32,7 +32,6 @@ ReactDOM.render(
   <Provider store={store}>
     <div style={{height: '100%'}}>
       <App io={io} />
-      <DevTools/>
     </div>
   </Provider>
   ,document.getElementById('root')

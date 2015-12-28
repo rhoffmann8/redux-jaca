@@ -27,7 +27,7 @@ const initialState = {
   }
 };
 
-function messages(state = [], action) {
+export function messages(state = [], action) {
   switch (action.type) {
     case EVENT_MSG_RECV:
       let newState = [...state, action.message];
@@ -37,7 +37,7 @@ function messages(state = [], action) {
   }
 };
 
-function users(state = [], action) {
+export function users(state = [], action) {
   switch (action.type) {
     case EVENT_USER_JOIN:
     case EVENT_USER_LEAVE:
@@ -48,7 +48,7 @@ function users(state = [], action) {
   }
 }
 
-function userInfo(state = initialState.userInfo, action) {
+export function userInfo(state = initialState.userInfo, action) {
   switch (action.type) {
     case EVENT_LOGIN_RESPONSE:
     case EVENT_INIT:
@@ -63,7 +63,7 @@ function userInfo(state = initialState.userInfo, action) {
   }
 };
 
-function settings(state = initialState.settings, action) {
+export function settings(state = initialState.settings, action) {
   switch (action.type) {
     case TOGGLE_SETTINGS:
       return {

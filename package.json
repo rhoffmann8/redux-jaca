@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node server.js",
     "lint": "eslint src",
-    "build": "webpack --module 'js=react!babel' --module 'jsx=react!babel' --module 'css=style!css!sass' --outfile dist/bundle.js"
+    "build": "webpack --module 'js=react!babel' --module 'jsx=react!babel' --module 'css=style!css!sass' --outfile dist/bundle.js",
+    "test": "mocha --compilers js:babel-core/register --recursive",
+    "test-watch": "npm test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -33,6 +35,8 @@
     "babel-preset-react": "^6.0.15",
     "babel-preset-stage-0": "^6.0.15",
     "eslint-plugin-react": "^3.6.2",
+    "expect": "^1.13.4",
+    "mocha": "^2.3.4",
     "node-static": "^0.7.7",
     "react-hot-loader": "^1.3.0",
     "webpack": "^1.12.2",
