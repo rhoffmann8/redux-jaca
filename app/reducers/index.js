@@ -5,7 +5,7 @@ import settings from './settings';
 import socket from './socket';
 
 export default combineReducers({
-	users,
+  users,
   messages,
   settings,
   socket

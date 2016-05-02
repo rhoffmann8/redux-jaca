@@ -13,7 +13,7 @@ export default function users(state = {
   self: null,
   list: []
 }, action) {
-	switch (action.type) {
+  switch (action.type) {
     case USER_LOGIN:
     case USER_RENAME:
       return Object.assign({}, state, {
@@ -21,9 +21,9 @@ export default function users(state = {
           name: action.name
         }
       });
-		case USER_JOIN:
-		case USER_LEAVE:
-			return Object.assign({}, state, {
+    case USER_JOIN:
+    case USER_LEAVE:
+      return Object.assign({}, state, {
         list: action.userList
       });
     case SOCKET_DISCONNECT:
@@ -31,7 +31,7 @@ export default function users(state = {
         self: null,
         list: []
       };
-		default:
-			return state;
-	}
+    default:
+      return state;
+  }
 }

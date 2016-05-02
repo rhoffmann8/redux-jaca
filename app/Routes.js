@@ -5,8 +5,8 @@ import NoMatch from './containers/NoMatch';
 import Chat from './containers/Chat';
 
 export default (
-	<Route path='/' component={App}>
-		<IndexRoute component={Chat} />
-		<Route path="*" component={NoMatch} />
-	</Route>
+  <Route path='/' component={App}>
+    <IndexRoute component={Chat} />
+    <Route path="*" component={NoMatch} />
+  </Route>
 );
