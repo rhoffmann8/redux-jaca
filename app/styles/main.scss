@@ -1,0 +1,243 @@
+$user-list-width: 200px;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: Helvetica;
+}
+
+.c-chat {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-left: $user-list-width;
+
+  &__top {
+    position: absolute;
+    right: 0;
+    background: #EEE;
+    box-shadow: 0 1px 2px 0px #AAA;
+    width: 100%;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: right;
+
+    &-user {
+      margin-right: 5px;
+    }
+
+    i {
+      cursor: pointer;
+    }
+  }
+
+  &__users {
+    position: absolute;
+    width: $user-list-width;
+    left: 0;
+    height: 100vh;
+    background: #165079;
+    box-shadow: 1px 0px 2px 0px #CCC;
+    padding: 10px;
+    color: white;
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  &__user-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__user {
+    margin: 2px 0px;
+  }
+
+  &__messages {
+    padding: 27px 2px 0px;
+    flex: 1;
+    overflow: scroll;
+  }
+
+  &__message-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    height: 100%;
+  }
+
+  &__message {
+    padding: 3px 2px;
+
+    &:nth-child(2n-1) {
+      background: #EEE;
+    }
+
+    &--user {
+
+    }
+
+    &--system {
+      color: red;
+      font-style: italic;
+    }
+  }
+
+  &__message-user {
+    margin-right: 5px;
+  }
+
+  &__message-text {
+
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 60px;
+    bottom: 0;
+    width: 100%;
+    outline: none;
+    padding: 0 10px;
+  }
+
+  &__input-text {
+    flex: 1;
+    border-right: none;
+    outline: none;
+    font-size: 20px;
+    border: 1px solid #CCC;
+    border-right: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 0px 5px;
+    height: 35px;
+  }
+
+  &__input-send {
+    width: 75px;
+    height: 35px;
+    font-size: 1em;
+    right: 0;
+    color: #8A8A8A;
+    text-transform: lowercase;
+    background: #EAEAEA;
+    border: 1px solid #CCC;
+    border-left: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+      background: #DADADA;
+    }
+  }
+}
+
+.t-hacker {
+  .c-chat {
+    font-family: monospace;
+
+    &__top {
+      background: black;
+      box-shadow: none;
+      border-bottom: 1px solid #444;
+
+      &-user {
+        font-size: 0.9em;
+        color: white;
+      }
+
+      i {
+        color: white;
+      }
+    }
+
+    &__users {
+      background: black;
+      box-shadow: none;
+      border-right: 1px solid #444;
+    }
+
+    &__messages {
+      background: black;
+    }
+
+    &__message {
+      &:nth-child(2n-1) {
+        background: #333;
+      }
+
+      &--user {
+        color: #0F0;
+      }
+    }
+
+    &__input {
+      background: black;
+
+      &-text, &-send {
+        font-family: monospace;
+        color: white;
+      }
+
+      &-text {
+        background: #666;
+      }
+
+      &-send {
+        background: black;
+
+      }
+    }
+  }
+}
+
+.c-settings {
+  &__error {
+    color: red;
+    font-size: 0.8em;
+  }
+
+  &__field {
+    margin: 5px 0px;
+  }
+
+  label {
+    display: inline-block;
+    min-width: 110px;
+    font-size: 0.8em;
+  }
+}
+
+.o-modal {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+
+  &__content {
+    background: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+  }
+}

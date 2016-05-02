@@ -2,21 +2,35 @@
 
 var path = require('path');
 var webpack = require('webpack');
+var del = require('del');
+
+class CleanPlugin {
+	constructor(options) {
+		this.options = options;
+	}
+
+	apply () {
+		del.sync(this.options.files);
+	}
+}
 
 module.exports = {
-	devtool: '#source-map',
-	entry: [
-		'webpack-hot-middleware/client',
-		'./app/index.js'
-	],
+	entry: './app/index',
 	output: {
 		path: path.join(__dirname, 'dist'),
-		filename: 'app.js'
+		filename: 'app.min.js'
 	},
 	plugins: [
 		new webpack.optimize.OccurrenceOrderPlugin(),
-		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NoErrorsPlugin()
+		new CleanPlugin({
+			files: ['dist/*']
+		}),
+		new webpack.optimize.UglifyJsPlugin({
+			compressor: {
+				warnings: false,
+				screw_ie8: true
+			}
+		})
 	],
 	module: {
 		loaders: [{
@@ -25,15 +39,6 @@ module.exports = {
 			include: path.join(__dirname, 'app'),
 			query: {
 				plugins: [
-					['react-transform', {
-						'transforms': [{
-							transform: 'react-transform-hmr',
-							// If you use React Native, pass 'react-native' instead:
-							imports: ['react'],
-							// This is important for Webpack HMR:
-							locals: ['module']
-						}]
-					}],
 					['transform-object-assign']
 				]
 			}

@@ -10,14 +10,18 @@ function log() {
 }
 
 function getUsers() {
-  return users.map(function(user) { return user.name; });
+  return users.map(function(user) { return user.name; }).sort(function(a,b) {
+    if (a < b) return -1;
+    else if (a > b) return 1;
+    else return 0;
+  });
 }
 
 function addUser(username) {
   if (!username || (users.filter(function(a) { return a.name == username})).length) {
     username = 'GuestUser' + userCount;
   }
-  
+
   var newUser = {
     name: username,
     id: userCount
@@ -25,7 +29,9 @@ function addUser(username) {
   users.push(newUser);
 
   users = users.sort(function(a,b) {
-    return a < b;
+    if (a < b) return -1;
+    else if (a > b) return 1;
+    else return 0;
   });
 
   userCount++;
@@ -65,10 +71,6 @@ var chat = io.on('connection', function(socket) {
   log("connection received");
 
   var thisUser;
-
-  socket.emit('init', {
-    loggedIn: false
-  });
 
   socket.on('user:login', function(username) {
     thisUser = addUser(username);
